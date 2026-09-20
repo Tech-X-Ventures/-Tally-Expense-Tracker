@@ -63,7 +63,7 @@ Download the repository from GitHub and extract the ZIP file.
 
 ### 2. Install Python
 
-Make sure **Python 3** is installed on your computer.
+Make sure **Python 3** is installed.
 
 Check it with:
 
@@ -121,6 +121,84 @@ No external database is required for the current version.
 
 ---
 
+## 🔍 How to Check Your Saved Data
+
+After adding an expense in Tally, the data is saved automatically in:
+
+```text
+data.json
+```
+
+### Method 1 — Open `data.json`
+
+1. Stop the server if needed or leave it running.
+2. Open your **Tally-Expense-Tracker** folder.
+3. Find:
+
+```text
+data.json
+```
+
+4. Open it with **Notepad**, **VS Code**, or another text editor.
+
+You will see the saved application data in JSON format.
+
+### Method 2 — Check from PowerShell
+
+Open PowerShell inside the project folder and run:
+
+```powershell
+Get-Content data.json
+```
+
+This will display the saved data directly in the terminal.
+
+### Example
+
+After adding expenses, `data.json` will contain your saved Tally data.
+
+You can use this file to verify that your expenses are being stored locally.
+
+> **Do not delete or manually modify `data.json` unless you know what you are changing.**
+
+---
+
+## 🔄 Test That Your Data Is Saved
+
+You can test the local storage system:
+
+1. Start Tally:
+
+```bash
+python server.py
+```
+
+2. Open:
+
+```text
+http://127.0.0.1:8000
+```
+
+3. Add an expense.
+4. Check that `data.json` has been created.
+5. Stop the server with:
+
+```text
+Ctrl + C
+```
+
+6. Start it again:
+
+```bash
+python server.py
+```
+
+7. Open Tally again.
+
+Your previously saved data should still be available.
+
+---
+
 ## 🔒 Local & Private
 
 Your expense data is stored locally on the computer where you run Tally.
@@ -157,7 +235,9 @@ http://127.0.0.1:8000
 
 The project is available on GitHub so anyone can download, study, modify, and run it locally.
 
-GitHub Pages can display the frontend, but the complete application requires the Python backend. For the full experience, download the repository and run `server.py` locally.
+GitHub Pages can display the frontend, but the complete application requires the Python backend.
+
+For the full application, download the repository and run `server.py` locally.
 
 ---
 
